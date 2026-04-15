@@ -43,7 +43,7 @@ bool    ScalarConverter::isFloatLiteral(const std::string &s)
     if (core[i] == '+' || core[i] == '-')
         i++;
 
-    if (i >=core.size())
+    if (i >= core.size())
         return (false);
 
     while (i < core.size())
