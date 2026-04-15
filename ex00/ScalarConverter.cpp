@@ -219,7 +219,7 @@ void    ScalarConverter::printFloat(const ParsedValue &v)
     }
 
     float f = static_cast<float>(v.number);
-    if (f == static_cast<int>(f))
+    if (std::floor(f) == f)
         std::cout << std::fixed << std::setprecision(1) << f << "f\n";
     else
         std::cout << f << "f\n";
@@ -250,7 +250,7 @@ void    ScalarConverter::printDouble(const ParsedValue &v)
     }
 
     double d = v.number;
-    if (d == static_cast<int>(d))
+    if (std::floor(d) == d)
         std::cout << std::fixed << std::setprecision(1) << d << "\n";
     else
         std::cout << d << "\n";
