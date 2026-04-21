@@ -36,6 +36,9 @@ bool    ScalarConverter::isFloatLiteral(const std::string &s)
         return (false);
     
     std::string core = s.substr(0, s.size() - 1);
+    if (core.empty())
+        return (false);
+
     size_t i = 0;
     bool hasDot = false;
     bool hasDigit = false;
