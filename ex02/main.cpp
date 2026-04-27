@@ -1,9 +1,13 @@
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 #include "identify.hpp"
 
-int main()
+int main(void)
 {
-    Base    *ptr = generate();
+    std::srand(std::time(0));   // seed once at program start
+
+    Base* ptr = generate();
 
     std::cout << "Identify by pointer: ";
     identify(ptr);
@@ -12,24 +16,5 @@ int main()
     identify(*ptr);
 
     delete ptr;
-
-    // // --------------------------
-    // Base *b = new A();
-
-    // A* d = dynamic_cast<A*>(b);
-    // if (!d)
-    //      std::cout << "Cast failed\n";
-
-    // delete b;
-
-    // // --------------------------
-    // Base *b = new Base();
-
-    // A     *d = dynamic_cast<A*>(b);
-    // if (!d)
-    //      std::cout << "Cast failed\n";
-
-    // delete b;
-
-    return (0);
+    return 0;
 }
