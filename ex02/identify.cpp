@@ -5,6 +5,7 @@
 
 Base* generate(void)
 {
+    std::srand(std::time(0));
     int value = std::rand() % 3;
 
     if (value == 0)
