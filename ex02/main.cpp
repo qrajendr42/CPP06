@@ -5,8 +5,6 @@
 
 int main(void)
 {
-    std::srand(std::time(0));   // seed once at program start
-
     Base* ptr = generate();
 
     std::cout << "Identify by pointer: ";

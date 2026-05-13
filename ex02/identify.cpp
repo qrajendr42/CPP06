@@ -5,6 +5,7 @@
 
 Base* generate(void)
 {
+    std::srand(std::time(0));
     int value = std::rand() % 3;
 
     if (value == 0)
@@ -14,17 +15,19 @@ Base* generate(void)
     return new C();
 }
 
-void identify(Base* p)
+void    identify(Base *p)
 {
     if (dynamic_cast<A*>(p))
-        return (void)(std::cout << "A" << std::endl);
-    if (dynamic_cast<B*>(p))
-        return (void)(std::cout << "B" << std::endl);
-    if (dynamic_cast<C*>(p))
-        return (void)(std::cout << "C" << std::endl);
+        std::cout << "A" << std::endl;
+    
+    else if (dynamic_cast<B*>(p))
+        std::cout << "B" << std::endl;
+    
+    else if (dynamic_cast<C*>(p))
+        std::cout << "C" << std::endl;
 }
 
-void identify(Base& p)
+void identify(Base &p)
 {
     try
     {
@@ -32,7 +35,9 @@ void identify(Base& p)
         std::cout << "A" << std::endl;
         return;
     }
-    catch (const std::exception&) {}
+    catch (std::exception &)
+    {
+    }
 
     try
     {
@@ -40,7 +45,9 @@ void identify(Base& p)
         std::cout << "B" << std::endl;
         return;
     }
-    catch (const std::exception&) {}
+    catch (std::exception &)
+    {
+    }
 
     try
     {
@@ -48,5 +55,7 @@ void identify(Base& p)
         std::cout << "C" << std::endl;
         return;
     }
-    catch (const std::exception&) {}
+    catch (std::exception &)
+    {
+    }
 }
