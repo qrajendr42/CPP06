@@ -11,9 +11,11 @@ int main()
 
     std::cout << "Before serialization:\n";
     std::cout << "\tAddress: " << &d << "\n";
-    std::cout << "\tid: " << d.id << "\n\tname: " << d.name << "\n\tvalue: " << d.value << "\n";
+    std::cout << "\tid: " << d.id << "\n\tname: " << d.name << "\n\tvalue: " << d.value << "\n" << "\n";
 
     unsigned long raw = Serializer::serialize(&d);
+
+    std::cout << "Serialized (raw): " << raw << "\n";
 
     Data* restored = Serializer::deserialize(raw);
 
